@@ -22,7 +22,7 @@ app.use(bodyParser.json());
 app.get("/", function (req, res) {
 
 // Sending index.html to the browser
-res.sendFile(__dirname + "/index.html");
+res.send('Welcome')
 });
 
 // Post request for geetting input from
