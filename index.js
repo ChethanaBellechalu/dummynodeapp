@@ -25,17 +25,6 @@ app.get("/", function (req, res) {
 res.send('Welcome')
 });
 
-// Post request for geetting input from
-// the form
-app.post("/mssg", function (req, res) {
-
-// Logging the form body
-console.log(req.body);
-
-// Redirecting to the root
-res.redirect("/");
-});
-
 app.post('/nlp', (req, res) => {
     console.info('printing request', req.body)
     const response = {
@@ -54,6 +43,6 @@ app.post('/nlp', (req, res) => {
 // options and app object
 const port = process.env.port || 3000
 http.createServer(app)
-.listen(port, "0.0.0.0", function (req, res) {
+.listen(port, function (req, res) {
 console.log("Server started at port 3000");
 });
