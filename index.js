@@ -55,7 +55,8 @@ cert: fs.readFileSync("selfsigned.crt"),
 
 // Creating https server by passing
 // options and app object
+const port = process.env.port || 3000
 https.createServer(options, app)
-.listen(3000, "0.0.0.0", function (req, res) {
+.listen(port, "0.0.0.0", function (req, res) {
 console.log("Server started at port 3000");
 });
