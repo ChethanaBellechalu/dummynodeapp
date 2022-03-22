@@ -22,7 +22,7 @@ app.use(bodyParser.json());
 app.get("/", function (req, res) {
 
 // Sending index.html to the browser
-res.send('Welcome')
+res.render('index.html')
 });
 
 app.post('/nlp', (req, res) => {
@@ -41,8 +41,8 @@ app.post('/nlp', (req, res) => {
 
 // Creating https server by passing
 // options and app object
-const port = process.env.port || 3000
+const PORT = process.env.PORT || 3000
 http.createServer(app)
-.listen(port, function (req, res) {
+.listen(PORT, function (req, res) {
 console.log("Server started at port 3000");
 });
