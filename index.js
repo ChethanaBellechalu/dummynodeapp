@@ -1,6 +1,6 @@
 // Requiring in-built https for creating
 // https server
-const https = require("https");
+const http = require("http");
 
 // Express for handling GET and POST request
 const express = require("express");
@@ -48,15 +48,12 @@ app.post('/nlp', (req, res) => {
 
 // Creating object of key and certificate
 // for SSL
-const options = {
-key: fs.readFileSync("selfsigned.key"),
-cert: fs.readFileSync("selfsigned.crt"),
-};
+
 
 // Creating https server by passing
 // options and app object
 const port = process.env.port || 3000
-https.createServer(options, app)
+http.createServer(app)
 .listen(port, "0.0.0.0", function (req, res) {
 console.log("Server started at port 3000");
 });
