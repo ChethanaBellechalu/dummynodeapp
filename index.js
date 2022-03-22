@@ -28,9 +28,9 @@ res.render('index.html')
 app.post('/nlp', (req, res) => {
     console.info('printing request', req.body)
     const response = {
-        "answer": "How are you doing?", 
-        "matchedContext": "", 
-        "conversationPayload": ""
+        "answer": "{\"answer\":\"Welcome to conversational AI\",\"instructions\":{}}",
+        "matchedContext": "",
+        "conversationPayload": "{}"
     }
     res.json(response)
 })
