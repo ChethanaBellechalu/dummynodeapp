@@ -47,6 +47,8 @@ app.post('/tts', (req, res) => {
 			response = fs.readFileSync('audio3.wav')
 		} else if (req.body.text === 'no') {
 			response = fs.readFileSync('audio4.wav')
+		} else {
+			response = fs.readFileSync('audio0.wav')
 		}
         // const response = fs.readFileSync('audio13.wav')
     res.setHeader('content-type', 'application/octet-stream')
