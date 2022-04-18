@@ -43,13 +43,12 @@ app.post('/tts', (req, res) => {
 		let response
 		console.info('printing request body', req.body.text)
 		if(counter === 1) {
-			response = fs.readFileSync('audio0.wav')
+			response = fs.readFileSync('welcome.wav')
 		} else if(counter === 2){
-			response = fs.readFileSync('audio2.wav')
+			response = fs.readFileSync('howareyou.wav')
 		} else if (counter === 3) {
-			response = fs.readFileSync('audio3.wav')
-		} else if (counter === 4) {
-			response = fs.readFileSync('audio4.wav')
+			response = fs.readFileSync('whatday.wav')
+			counter = 0
 		}
         // const response = fs.readFileSync('audio13.wav')
     res.setHeader('content-type', 'application/octet-stream')
