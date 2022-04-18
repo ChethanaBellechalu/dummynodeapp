@@ -17,6 +17,7 @@ const bodyParser = require("body-parser");
 // as middle-ware
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+let counter = 0
 
 // Get request for root of the app
 app.get("/", function (req, res) {
@@ -38,17 +39,17 @@ app.post('/nlp', (req, res) => {
 app.post('/tts', (req, res) => {
     const isValid = validateRequestBody(req.body)
     if (isValid) {
+		counter++ 
 		let response
-		if(req.body.text === 'welcome') {
+		console.info('printing request body', req.body.text)
+		if(counter === 1) {
 			response = fs.readFileSync('audio0.wav')
-		} else if(req.body.text === 'start'){
+		} else if(counter === 2){
 			response = fs.readFileSync('audio2.wav')
-		} else if (req.body.text === 'ok') {
+		} else if (counter === 3) {
 			response = fs.readFileSync('audio3.wav')
-		} else if (req.body.text === 'no') {
+		} else if (counter === 4) {
 			response = fs.readFileSync('audio4.wav')
-		} else {
-			response = fs.readFileSync('audio0.wav')
 		}
         // const response = fs.readFileSync('audio13.wav')
     res.setHeader('content-type', 'application/octet-stream')
