@@ -38,7 +38,7 @@ app.post('/nlp', (req, res) => {
 app.post('/tts', (req, res) => {
     const isValid = validateRequestBody(req.body)
     if (isValid) {
-        const response = fs.readFileSync('audio1.wav')
+        const response = fs.readFileSync('audio13.wav')
     res.setHeader('content-type', 'application/octet-stream')
     res.send(response)
     }
