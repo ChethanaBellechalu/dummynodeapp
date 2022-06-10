@@ -42,24 +42,48 @@ app.post('/tts', (req, res) => {
 		counter++ 
 		let response
 		console.info('printing request body', req.body.text)
+		// if(counter === 1) {
+		//	response = fs.readFileSync('welcomeFinance.wav')
+		//} else if(counter === 2){
+			//response = fs.readFileSync('accountBalance.wav')
+		//} else if (counter === 3) {
+			//response = fs.readFileSync('moneyTransfer.wav')
+		//} else if (counter === 4) {
+          //  response = fs.readFileSync('amount.wav')
+        //} else if (counter === 5) {
+          //  response = fs.readFileSync('list.wav')
+        //} else if (counter === 6) {
+          //  response = fs.readFileSync('amountConfirm.wav')
+        //} else if (counter === 7) {
+          //  response = fs.readFileSync('successTransfer.wav')
+        //} else if (counter === 8) {
+          //  response = fs.readFileSync('balanceafterpayment.wav')
+            //counter = 0
+        //}
+		
+		
 		if(counter === 1) {
-			response = fs.readFileSync('welcomeFinance.wav')
+			response = fs.readFileSync('qsr1.wav')
 		} else if(counter === 2){
-			response = fs.readFileSync('accountBalance.wav')
+			response = fs.readFileSync('qsr3.wav')
 		} else if (counter === 3) {
-			response = fs.readFileSync('moneyTransfer.wav')
+			response = fs.readFileSync('qsr4.wav')
 		} else if (counter === 4) {
-            response = fs.readFileSync('amount.wav')
+            response = fs.readFileSync('qsr5.wav')
         } else if (counter === 5) {
-            response = fs.readFileSync('list.wav')
+            response = fs.readFileSync('qsr6.wav')
         } else if (counter === 6) {
-            response = fs.readFileSync('amountConfirm.wav')
+            response = fs.readFileSync('qsr7.wav')
         } else if (counter === 7) {
-            response = fs.readFileSync('successTransfer.wav')
+            response = fs.readFileSync('qsr8.wav')
         } else if (counter === 8) {
-            response = fs.readFileSync('balanceafterpayment.wav')
-            counter = 0
-        }
+            response = fs.readFileSync('qsr9.wav')
+        } else if (counter === 9) {
+            response = fs.readFileSync('qsr10.wav')
+        } else if (counter === 10) {
+            response = fs.readFileSync('qsr11.wav')
+			counter = 0
+        } 
         // const response = fs.readFileSync('audio13.wav')
     res.setHeader('content-type', 'application/octet-stream')
     res.send(response)
